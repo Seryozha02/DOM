@@ -61,17 +61,17 @@ let arr2 = func(arr)
 
 let dom = document.getElementById("dom")
 
-function table(array){
+function makeTable(array){
 dom.innerHTML += `
   <ul id = "genUl">
     <li id = "li${array[0].id}"'><p id = 'p${array[0].id}'>${array[0].name}</p></li>
   </ul>
 `
-ul(array[0].children)
+makeUl(array[0].children)
 
 }
 
-function ul(arr){
+function makeUl(arr){
 if(arr.length == 0){
   return
 }else{
@@ -82,12 +82,12 @@ if(arr.length == 0){
         <li id = "li${obj.id}"><p id = 'p${obj.id}'>${obj.name}</p></li>
       </ul>
       `
-      ul(obj.children)
+      makeUl(obj.children)
     })
   }
 }
 }
-table(arr2)
+makeTable(arr2)
 
 let list = document.querySelectorAll("p")
 function find(value){
